@@ -15,6 +15,6 @@ clean:
 	rm -rf node_modules/ generators/ package-lock.json
 	npm install
 	npm run build
-	cp -r src/app/templates/ generators/app/
+	cp -r src/*/templates/ generators/*/
 	npm link
 
