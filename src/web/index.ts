@@ -51,6 +51,9 @@ export default class extends BaseGenerator {
 
     const directoryGroupId = this.answers.groupId.split(".").join("/")
 
+    const mainDirectory = `src/main/java/${directoryGroupId}/demo`;
+    const testDirectory = `src/test/java/${directoryGroupId}/demo`;
+
     const files: FileSystemEntity[] = [
       { currentName: "_gitignore", newName: ".gitignore" },
 
@@ -74,21 +77,21 @@ export default class extends BaseGenerator {
       },
       {
         currentName: "src/DemoApplication.java",
-        newName: `src/main/java/${directoryGroupId}/demo/DemoApplication.java`,
+        newName: `${mainDirectory}/DemoApplication.java`,
         data: {
           groupId: this.answers.groupId
         }
       },
       {
         currentName: "src/DemoApplicationTest.java",
-        newName: `src/test/java/${directoryGroupId}/demo/DemoApplicationTest.java`,
+        newName: `${testDirectory}/DemoApplicationTest.java`,
         data: {
           groupId: this.answers.groupId
         }
       },
       {
         currentName: "src/HelloController.java",
-        newName: `src/test/java/${directoryGroupId}/demo/controllers/HelloController.java`,
+        newName: `${mainDirectory}/controllers/HelloController.java`,
         data: {
           groupId: this.answers.groupId
         }
