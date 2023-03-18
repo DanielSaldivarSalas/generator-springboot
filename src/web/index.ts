@@ -86,6 +86,13 @@ export default class extends BaseGenerator {
           groupId: this.answers.groupId
         }
       },
+      {
+        currentName: "src/HelloController.java",
+        newName: `src/test/java/${directoryGroupId}/demo/controllers/HelloController.java`,
+        data: {
+          groupId: this.answers.groupId
+        }
+      }
     ];
 
     templates.forEach(el => {
